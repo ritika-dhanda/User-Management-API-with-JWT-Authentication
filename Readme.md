@@ -121,7 +121,9 @@ Body (JSON):
   "password": "password123"
 }
 ```
-You will get a token and and id from here , note it somewhere you will need it later .
+You will get a token and an id from here , note it somewhere you will need it later .
+<img width="817" height="340" alt="Screenshot 2025-12-11 173833" src="https://github.com/user-attachments/assets/59b7cf7f-77c3-426e-9d05-10805b94def6" />
+
 ---
 
 ### 2. Login User
@@ -137,17 +139,23 @@ Body (JSON):
 
 Response contains **JWT token** to access protected routes.
 Paste the token in the auth -> bearer token part 
+<img width="1726" height="313" alt="Screenshot 2025-12-11 174042" src="https://github.com/user-attachments/assets/740e5e81-f16b-4b5e-b218-da20ab59cfa1" />
+
 ---
 
 ### 3. Get All Users (Protected)
 **GET** `/api/users`  
 Header: `Authorization: Bearer <token>`
 
+
+<img width="916" height="577" alt="Screenshot 2025-12-11 174136" src="https://github.com/user-attachments/assets/c4237542-0c42-4dda-ac46-32fbc914eb9c" />
+
 ---
 
 ### 4. Get Single User (Protected)
 **GET** `/api/users/:id`  
 Header: `Authorization: Bearer <token>`
+<img width="1074" height="494" alt="Screenshot 2025-12-11 174218" src="https://github.com/user-attachments/assets/28a907e7-8983-48c8-aa7f-03080122560f" />
 
 ---
 
