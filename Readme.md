@@ -15,6 +15,9 @@ This project is a **RESTful API** for user management, developed using **Node.js
 - Passwords are securely hashed using **bcrypt**.  
 - Error handling implemented for invalid requests and missing resources.  
 
+Protected ones can be accessed by using auth bearer token which you will get while creating a user.
+
+
 ---
 
 ## Project Structure
@@ -63,11 +66,20 @@ npm install express mongoose dotenv bcryptjs express-async-handler jsonwebtoken 
 ```
 
 3. Create a `.env` file in the root directory and add:
-
+   
 ```
 PORT=3000
 MONGO_URI=<your-mongodb-connection-string>
 JWT_SECRET=<your-secret-key>
+```
+
+i) What is Mongo_URI ?
+MONGO_URI=mongodb://localhost:YOUR_PORT/yourdbname
+
+ii)How to get JWT_SECRET?
+Run this command in your terminal:
+```
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
 
 ---
@@ -109,7 +121,7 @@ Body (JSON):
   "password": "password123"
 }
 ```
-
+You will get a token and and id from here , note it somewhere you will need it later .
 ---
 
 ### 2. Login User
@@ -124,7 +136,7 @@ Body (JSON):
 ```
 
 Response contains **JWT token** to access protected routes.
-
+Paste the token in the auth -> bearer token part 
 ---
 
 ### 3. Get All Users (Protected)
